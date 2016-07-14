@@ -9,13 +9,13 @@ import com.github.dockerjava.api.model.Statistics;
  * Get container stats. The result of {@link Statistics} is handled asynchronously because the docker remote API will block when a container
  * is stopped until the container is up again.
  */
-public interface StatsCmd extends AsyncDockerCmd<StatsCmd, Statistics> {
+public interface StatsCmd extends SyncDockerCmd<Statistics> {
 
     @CheckForNull
     String getContainerId();
 
     StatsCmd withContainerId(@Nonnull String containerId);
 
-    interface Exec extends DockerCmdAsyncExec<StatsCmd, Statistics> {
+    interface Exec extends DockerCmdSyncExec<StatsCmd, Statistics> {
     }
 }
