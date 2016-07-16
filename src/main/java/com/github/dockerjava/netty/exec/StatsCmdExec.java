@@ -19,7 +19,7 @@ public class StatsCmdExec implements StatsCmd.Exec {
 
     @Override
     public Statistics exec(StatsCmd command) {
-        return webTarget.path("/containers/{id}/stats").queryParam("stream","false").request().get(new TypeReference<Statistics>() {
+        return webTarget.path("/containers/{id}/stats").queryParam("stream", "false").request().get(new TypeReference<Statistics>() {
         });
     }
 }

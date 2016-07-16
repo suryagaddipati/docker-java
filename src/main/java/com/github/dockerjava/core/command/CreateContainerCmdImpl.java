@@ -791,6 +791,12 @@ public class CreateContainerCmdImpl extends AbstrDockerCmd<CreateContainerCmd, C
         hostConfig.withMemory(memory);
         return this;
     }
+    @Override
+    public CreateContainerCmd withMemoryReservation(Long memory) {
+        checkNotNull(memory, "memory was not specified");
+        hostConfig.withMemoryReservation(memory);
+        return this;
+    }
 
     @Override
     public CreateContainerCmd withMemorySwap(Long memorySwap) {

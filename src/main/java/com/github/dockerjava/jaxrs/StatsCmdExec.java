@@ -18,7 +18,7 @@ public class StatsCmdExec extends AbstrSyncDockerCmdExec<StatsCmd, Statistics> i
 
     @Override
     protected Statistics execute(StatsCmd command) {
-        WebTarget webResource = getBaseResource().path("/containers/{id}/stats").resolveTemplate("id",
+        WebTarget webResource = getBaseResource().path("/containers/{id}/stats").queryParam("stream", "false").resolveTemplate("id",
                 command.getContainerId());
 
         LOGGER.trace("GET: {}", webResource);

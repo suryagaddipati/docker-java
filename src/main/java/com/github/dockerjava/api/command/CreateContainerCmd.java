@@ -349,6 +349,7 @@ public interface CreateContainerCmd extends SyncDockerCmd<CreateContainerRespons
     CreateContainerCmd withMacAddress(String macAddress);
 
     CreateContainerCmd withMemory(Long memory);
+    CreateContainerCmd withMemoryReservation(Long memory);
 
     CreateContainerCmd withMemorySwap(Long memorySwap);
 
