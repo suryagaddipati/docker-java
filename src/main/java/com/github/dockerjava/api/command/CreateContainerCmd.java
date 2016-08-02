@@ -422,6 +422,8 @@ public interface CreateContainerCmd extends SyncDockerCmd<CreateContainerRespons
 
     CreateContainerCmd withVolumes(Volume... volumes);
 
+    CreateContainerCmd withVolumeDriver(String volumesDriver);
+
     CreateContainerCmd withVolumes(List<Volume> volumes);
 
     CreateContainerCmd withVolumesFrom(VolumesFrom... volumesFrom);

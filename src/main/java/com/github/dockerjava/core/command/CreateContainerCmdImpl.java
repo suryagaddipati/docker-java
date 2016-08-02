@@ -943,6 +943,13 @@ public class CreateContainerCmdImpl extends AbstrDockerCmd<CreateContainerCmd, C
     }
 
     @Override
+    public CreateContainerCmd withVolumeDriver(String volumeDriver) {
+        checkNotNull(volumeDriver, "volume driver was not specified");
+        this.hostConfig.withVolumeDriver(volumeDriver);
+        return this;
+    }
+
+    @Override
     public CreateContainerCmd withVolumes(List<Volume> volumes) {
         checkNotNull(volumes, "volumes was not specified");
         return withVolumes(volumes.toArray(new Volume[volumes.size()]));
